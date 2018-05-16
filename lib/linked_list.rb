@@ -67,4 +67,10 @@ class LinkedList
     data
   end
 
+  def shift
+    holder, data = @head.next_node, @head.data
+    @head = holder
+    data
+  end
+
 end

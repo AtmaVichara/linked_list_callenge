@@ -87,5 +87,18 @@ describe LinkedList, type: :model do
         expect(@ll.to_s).to eq("25")
       end
     end
+
+    describe "#shift" do
+      it "shifts off the first element in linked list" do
+        5.times do
+          @ll.append(5)
+        end
+        @ll.prepend(8)
+
+        expect(@ll.to_s).to eq("33")
+        expect(@ll.shift).to eq(8)
+        expect(@ll.to_s).to eq("25")
+      end
+    end
   end
 end

@@ -100,5 +100,17 @@ describe LinkedList, type: :model do
         expect(@ll.to_s).to eq("25")
       end
     end
+
+    describe "#sort" do
+      @ll.append(2)
+      @ll.append(3)
+      @ll.append(7)
+      @ll.append(5)
+      @ll.append(1)
+      @ll.sort
+
+      expect(@ll.pop).to eq(7)
+      expect(@ll.shift).to eq(1)
+    end
   end
 end

@@ -32,5 +32,17 @@ describe LinkedList, type: :model do
         expect(@ll.count).to eq(5)
       end
     end
+
+    describe "#to_s" do
+      it "returns data" do
+        @ll.append(5)
+
+        expect(@ll.to_s).to eq("5")
+
+        @ll.append(10)
+
+        expect(@ll.to_s).to eq("15")
+      end
+    end
   end
 end

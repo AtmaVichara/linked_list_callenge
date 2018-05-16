@@ -1,4 +1,6 @@
 require_relative "node"
+require 'pry'
+
 
 class LinkedList
 
@@ -26,6 +28,18 @@ class LinkedList
       counter += 1
     end
     counter
+  end
+
+  def to_s(total = 0, current = @head)
+    if current.nil?
+      return total.to_s
+    elsif current.next_node.nil?
+      total += current.data
+      return total.to_s
+    else
+      total += current.data
+      to_s(total, current.next_node)
+    end 
   end
 
 end

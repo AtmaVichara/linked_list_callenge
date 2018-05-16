@@ -74,5 +74,18 @@ describe LinkedList, type: :model do
         expect(@ll.head.next_node.data).to eq(4)
       end
     end
+
+    describe "#pop" do
+      it "pops off last ellement" do
+        5.times do
+          @ll.append(5)
+        end
+        @ll.append(4)
+
+        expect(@ll.pop).to eq(4)
+
+        expect(@ll.to_s).to eq("25")
+      end
+    end
   end
 end

@@ -58,4 +58,13 @@ class LinkedList
     current.data
   end
 
+  def pop(current = @head)
+    until current.next_node.next_node.nil?
+      current = current.next_node
+    end
+    data = current.next_node.data
+    current.next_node = nil
+    data
+  end
+
 end

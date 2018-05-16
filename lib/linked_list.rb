@@ -39,7 +39,17 @@ class LinkedList
     else
       total += current.data
       to_s(total, current.next_node)
-    end 
+    end
+  end
+
+  def prepend(data)
+    temp_head = @head
+    @head = Node.new(data)
+    @head.next_node = temp_head
+  end
+
+  def insert(position, data, current = @head)
+    g
   end
 
 end
